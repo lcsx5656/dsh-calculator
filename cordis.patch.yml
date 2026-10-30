@@ -1,0 +1,7 @@
+# dsh-calculator bundle patch: 把计算器插进 profile 的层栈。
+# 宿主半边什么都不做（只是一个挂载点），真正的界面全在 client.js。
+- insert:
+    - id: dsh-calculator
+      name: 'dsh-calculator'
+      config:
+        enabled: true

@@ -1,0 +1,39 @@
+{
+  "name": "dsh-calculator",
+  "version": "1.0.0",
+  "description": "DSH 计算器：Ctrl+Q 唤出，支持表达式计算、变量存储、秒/分/小时与时分秒互转",
+  "license": "MIT",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./client.js": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node --check index.js && node --check client.js",
+    "test": "node test/run.mjs && node test/smoke.mjs"
+  },
+  "dsh": {
+    "id": "dsh-calculator",
+    "name": "计算器",
+    "version": "1.0.0",
+    "permissions": "客户端浮层, 本地存储",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}
